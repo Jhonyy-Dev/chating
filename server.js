@@ -5,16 +5,15 @@ const io = require('socket.io')(http);
 const mongoose = require('mongoose');
 const Message = require('./models/Message');
 
-// Configuración de conexión MongoDB con manejo de errores
-mongoose.connect('mongodb://127.0.0.1:27017/chat', {
+// Nueva cadena de conexión de MongoDB Atlas
+mongoose.connect('mongodb+srv://Yoka:5hC4O5y9vh9zEJZ9@yoka.ss9m9.mongodb.net/chat?retryWrites=true&w=majority', {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000 // Tiempo de espera reducido
+    useUnifiedTopology: true
 })
-.then(() => console.log('Conectado a MongoDB'))
+.then(() => console.log('Conectado a MongoDB Atlas'))
 .catch(err => {
-    console.error('Error conectando a MongoDB:', err);
-    process.exit(1); // Terminar el proceso si no se puede conectar
+    console.error('Error conectando a MongoDB Atlas:', err);
+    process.exit(1);
 });
 
 // Manejo de errores de conexión
