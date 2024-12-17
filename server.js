@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const Message = require('./models/Message');
 
 // Nueva cadena de conexión de MongoDB Atlas
-mongoose.connect('mongodb+srv://Yoka:5hC4O5y9vh9zEJZ9@yoka.ss9m9.mongodb.net/chat?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Yoka:5hC4O5y9vh9zEJZ9@yoka.ss9m9.mongodb.net/?retryWrites=true&w=majority&appName=Yoka', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
